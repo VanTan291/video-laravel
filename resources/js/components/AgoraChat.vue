@@ -164,8 +164,9 @@ export default {
       try {
         // channelName = the caller's and the callee's id. you can use anything. tho.
         const channelName = `${this.authuser}_${calleeName}`;
+        console.log('----' + channelName);
         const tokenRes = await this.generateToken(channelName);
-
+        console.log('----' + tokenRes.data);
         // Broadcasts a call event to the callee and also gets back the token
         await axios.post("/agora/call-user", {
           user_to_call: id,
